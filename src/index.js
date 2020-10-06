@@ -4,16 +4,17 @@ import './index.css';
 
 let city = "Madrid"
 
-function Lake ({ name }) {
-  return <h1>{name}</h1>
-}
+const catNames = [
+  "Catterina",
+  "Pluto",
+  "Lorre"
+];
 
-function App () {
+function App ({cats}) {
   return (
-    <div>
-      <Lake name="Lake Dallas" />
-      <Lake name="Lake Michigan" />
-    </div>
+    <ul>
+      {cats.map( name => (<li>{ name }</li>))}
+    </ul>
   )
 }
 
@@ -33,6 +34,6 @@ function Hello(props){
 
 ReactDOM.render(
   // <Hello library="React" number={123}/>,
-  <App />,
+  <App cats={catNames}/>,
   document.getElementById('root')
 );
