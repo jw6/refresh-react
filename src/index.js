@@ -4,17 +4,21 @@ import './index.css';
 
 let city = "Madrid"
 
-function Hello(){
+function Hello(props){
+  console.log(Object.keys(props));
   return (
     <div>
       <h1 id="heading" className="cool-text">
-        Hello from {city} 
+        Hello from {city}
+        fun with {props.library}
+        <p>{props.number} Number </p>
+        <p>{Object.keys(props).length}</p>
       </h1>
     </div>
   )
 }
 
 ReactDOM.render(
-  <Hello />,
+  <Hello library="React" number={123}/>,
   document.getElementById('root')
 );
