@@ -4,6 +4,19 @@ import './index.css';
 
 let city = "Madrid"
 
+function Lake ({ name }) {
+  return <h1>{name}</h1>
+}
+
+function App () {
+  return (
+    <div>
+      <Lake name="Lake Dallas" />
+      <Lake name="Lake Michigan" />
+    </div>
+  )
+}
+
 function Hello(props){
   console.log(Object.keys(props));
   return (
@@ -19,6 +32,7 @@ function Hello(props){
 }
 
 ReactDOM.render(
-  <Hello library="React" number={123}/>,
+  // <Hello library="React" number={123}/>,
+  <App />,
   document.getElementById('root')
 );
