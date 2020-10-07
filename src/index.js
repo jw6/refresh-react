@@ -59,6 +59,13 @@ function App(props) {
   )
 }
 
+const [,,fruit] = [
+  "popcorn",
+  "pretzels",
+  "pineapple"
+]
+
+console.log(fruit);
 
 ReactDOM.render(
   // <Hello library="React" number={123}/>,
