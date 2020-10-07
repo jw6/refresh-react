@@ -4,17 +4,23 @@ import './index.css';
 
 let city = "Madrid"
 
-const catNames = [
-  "Catterina",
-  "Pluto",
-  "Lorre"
-];
+const lakeList = [
+  { id: 1, name: "Echo", trailhead: "Echo"},
+  { id: 2, name: "Maud", trailhead: "Wrights"},
+  { id: 3, name: "Velma", trailhead: "Bayview"}
+]
 
-function App ({cats}) {
+function App ({ lakes }) {
   return (
-    <ul>
-      {cats.map( name => (<li>{ name }</li>))}
-    </ul>
+    <div>
+      {lakes.map(lake => (
+        <div key={lake.id}>
+          <h2>{lake.name}</h2>
+          <p>Access by: {lake.trailhead}</p>
+        </div>
+      ))}
+    </div>
+
   )
 }
 
@@ -34,6 +40,6 @@ function Hello(props){
 
 ReactDOM.render(
   // <Hello library="React" number={123}/>,
-  <App cats={catNames}/>,
+  <App lakes={lakeList}/>,
   document.getElementById('root')
 );
