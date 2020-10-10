@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -50,13 +50,32 @@ function SkiResort() {
   )
 }
 
-function App(props) {
+// function App(props) {
+//   return (
+//     <>
+//         <Lake />
+//     <SkiResort />
+//     </>
+//   )
+// }
+
+function App() {
+  //hook
+  const [status, setStatus] = useState("Open");
   return (
-    <>
-        <Lake />
-    <SkiResort />
-    </>
-  )
+    <div>
+      <h1>Status: {status}</h1>
+      <button onClick={() => setStatus("Open")}>
+        Open
+      </button>
+      <button onClick={() => setStatus("Closed")}>
+        Closed
+      </button>
+      <button onClick={() => setStatus("Back in 5")}>
+        Break
+      </button>
+    </div>
+  );
 }
 
 const [,,fruit] = [
