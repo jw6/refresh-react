@@ -1,39 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
 let city = "Madrid"
 
-const catNames = [
-  "Catterina",
-  "Pluto",
-  "Lorre"
-];
-
-function App ({cats}) {
+function Lake() {
   return (
-    <ul>
-      {cats.map( name => (<li>{ name }</li>))}
-    </ul>
+      <h1>Lake</h1>
   )
 }
 
-function Hello(props){
-  console.log(Object.keys(props));
+function SkiResort() {
+  return (
+    <h1>Ski Resort</h1>
+  )
+}
+
+function App() {
+  //hook
+  const [status, setStatus] = useState("Open");
   return (
     <div>
-      <h1 id="heading" className="cool-text">
-        Hello from {city}
-        fun with {props.library}
-        <p>{props.number} Number </p>
-        <p>{Object.keys(props).length}</p>
-      </h1>
+      <h1>Status: {status}</h1>
+      <button onClick={() => setStatus("Open")}>
+        Open
+      </button>
+      <button onClick={() => setStatus("Closed")}>
+        Closed
+      </button>
+      <button onClick={() => setStatus("Back in 5")}>
+        Break
+      </button>
     </div>
-  )
+  );
 }
 
 ReactDOM.render(
-  // <Hello library="React" number={123}/>,
-  <App cats={catNames}/>,
+  <App season="winter" />, 
   document.getElementById('root')
 );
